@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnnuhl4bejomt"]
+
+[ext_resource type="Script" uid="uid://bl6c5uu7n02c2" path="res://player/player.gd" id="1_dw050"]
+[ext_resource type="Texture2D" uid="uid://dgb5qn1sii5xx" path="res://player/character_roundRed.png" id="2_b26j0"]
+[ext_resource type="Script" uid="uid://ceoj8q6wytgmn" path="res://player/move_controller.gd" id="3_n7ghd"]
+[ext_resource type="Script" uid="uid://b7hrftvy2n3pt" path="res://state_machine/state_machine.gd" id="4_nvl01"]
+[ext_resource type="Script" uid="uid://d2x54ast4mwde" path="res://state_machine/actor_states/actor_idle.gd" id="5_ivps1"]
+[ext_resource type="Script" uid="uid://im5ncbv0gapj" path="res://state_machine/actor_states/actor_move.gd" id="6_urp6f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fj7yv"]
+radius = 20.0
+height = 60.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_dw050")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b26j0")
+offset = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("CapsuleShape2D_fj7yv")
+
+[node name="MoveController" type="Node" parent="."]
+script = ExtResource("3_n7ghd")
+
+[node name="MoveStateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("4_nvl01")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="MoveStateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state")]
+script = ExtResource("5_ivps1")
+fall_state = NodePath("")
+jump_state = NodePath("")
+move_state = NodePath("../Move")
+
+[node name="Move" type="Node" parent="MoveStateMachine" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_urp6f")
+idle_state = NodePath("../Idle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -144)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.0
