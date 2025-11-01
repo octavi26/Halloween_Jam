@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://detwugmh7s3a5"]
+
+[ext_resource type="Script" uid="uid://w7r1sofajft7" path="res://Test_Things/Testing_Area/Enemy_Test.gd" id="1_k7g4d"]
+[ext_resource type="Texture2D" uid="uid://dgb5qn1sii5xx" path="res://player/character_roundRed.png" id="2_us3a4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_us3a4"]
+radius = 20.0
+height = 60.0
+
+[node name="Enemy" type="CharacterBody2D"]
+wall_min_slide_angle = 0.0
+script = ExtResource("1_k7g4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.027451, 1, 1)
+texture = ExtResource("2_us3a4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_us3a4")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 1.0
+radius = 20.0
+debug_enabled = true

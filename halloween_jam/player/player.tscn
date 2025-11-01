@@ -30,10 +30,8 @@ script = ExtResource("3_n7ghd")
 script = ExtResource("4_nvl01")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="MoveStateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state")]
+[node name="Idle" type="Node" parent="MoveStateMachine" node_paths=PackedStringArray("move_state")]
 script = ExtResource("5_ivps1")
-fall_state = NodePath("")
-jump_state = NodePath("")
 move_state = NodePath("../Move")
 
 [node name="Move" type="Node" parent="MoveStateMachine" node_paths=PackedStringArray("idle_state")]
