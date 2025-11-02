@@ -22,6 +22,29 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	move_state_machine.process_frame(delta)
+	
+	var angle = (get_global_mouse_position() - global_position).angle()
+	var direction : String
+	var action : String = "walk"
+	if angle < 0:
+		angle += 2 * PI
+		
+	if angle <= PI / 4 or angle >= 7 * PI / 4:
+		direction = "east"
+	if angle >= PI / 4 and angle <= 3 * PI / 4:
+		direction = "south"
+	if angle >= 3 * PI / 4 and angle <= 5 * PI / 4:
+		direction = "west"
+	if angle >= 5 * PI / 4 and angle <= 7 * PI / 4:
+		direction = "north"
+		
+	if velocity:
+		action = "walk"
+	else:
+		action = "idle"
+		
+	$AnimatedSprite2D.play(action + "_" + direction)
+	#rotation = angle
 
 func die() -> void:
 	get_tree().call_deferred("reload_current_scene")

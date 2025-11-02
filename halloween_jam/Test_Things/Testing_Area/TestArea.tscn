@@ -654,14 +654,13 @@ sources/0 = SubResource("TileSetAtlasSource_0gh4r")
 [node name="TestArea" type="Node2D"]
 script = ExtResource("1_nn8mg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Enemy" parent="." instance=ExtResource("2_0gh4r")]
 position = Vector2(275, 242)
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 
+<<<<<<< Updated upstream
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_shsrb")
 
@@ -686,3 +685,9 @@ position = Vector2(358, -205)
 
 [node name="Marker2D5" type="Marker2D" parent="." groups=["SpawnPoints"]]
 position = Vector2(311, 55)
+=======
+[node name="Player" parent="." instance=ExtResource("3_shsrb")]
+unique_name_in_owner = true
+collision_mask = 3
+max_move_speed = 150.0
+>>>>>>> Stashed changes

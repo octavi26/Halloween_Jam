@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgb5qn1sii5xx"
-path="res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"
+uid="uid://2bekahifaw6c"
+path="res://.godot/imported/GuntBlast.png-3f103595450c8bcd6e2ec34d7f473382.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/character_roundRed.png"
-dest_files=["res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"]
+source_file="res://Assets/GuntBlast.png"
+dest_files=["res://.godot/imported/GuntBlast.png-3f103595450c8bcd6e2ec34d7f473382.ctex"]
 
 [params]
 
