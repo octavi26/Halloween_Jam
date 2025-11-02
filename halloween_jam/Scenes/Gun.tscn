@@ -102,7 +102,7 @@ frame_progress = 1.0
 
 [node name="Muzzle_South" type="Node2D" parent="."]
 position = Vector2(-1, 19)
-rotation = 1.5707964
+rotation = 1.5708
 
 [node name="Flash" type="AnimatedSprite2D" parent="Muzzle_South"]
 position = Vector2(1, 0)
@@ -111,7 +111,7 @@ frame = 4
 
 [node name="Muzzle_West" type="Node2D" parent="."]
 position = Vector2(-20, -1)
-rotation = 3.1415927
+rotation = 3.14159
 
 [node name="Flash" type="AnimatedSprite2D" parent="Muzzle_West"]
 position = Vector2(1, 0)
@@ -120,7 +120,7 @@ frame = 4
 
 [node name="Muzzle_North" type="Node2D" parent="."]
 position = Vector2(0, -20)
-rotation = -1.5707964
+rotation = -1.5708
 
 [node name="Flash" type="AnimatedSprite2D" parent="Muzzle_North"]
 position = Vector2(1, 0)

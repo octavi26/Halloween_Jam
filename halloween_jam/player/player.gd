@@ -9,6 +9,8 @@ class_name player extends CharacterBody2D
 @onready var move_state_machine: Node = $MoveStateMachine
 @onready var move_controller: Node = $MoveController
 @onready var screen_size := get_viewport_rect().size
+@onready var bullets = 5
+@onready var health = 5
 
 
 func _ready() -> void:

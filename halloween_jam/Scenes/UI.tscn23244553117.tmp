@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvhbbl2q4jo6e"]
+
+[ext_resource type="Script" uid="uid://l2q1v0rsg0gc" path="res://Scenes/ui.gd" id="1_dewlx"]
+[ext_resource type="PackedScene" uid="uid://yt6k8v3kru75" path="res://Scenes/Health.tscn" id="1_nxvpl"]
+[ext_resource type="PackedScene" uid="uid://d35upoq0q0mxa" path="res://Scenes/Bullets.tscn" id="2_dewlx"]
+
+[node name="Ui" type="CanvasLayer"]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+script = ExtResource("1_dewlx")
+
+[node name="Health" parent="." instance=ExtResource("1_nxvpl")]
+
+[node name="Bullets" parent="." instance=ExtResource("2_dewlx")]
+offset_top = 17.0
+offset_right = 86.0
+offset_bottom = 33.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

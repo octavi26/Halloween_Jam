@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dv5cwm2kehylh" path="res://Assets/player_south.png" id="5_ebec5"]
 [ext_resource type="Script" uid="uid://d2x54ast4mwde" path="res://state_machine/actor_states/actor_idle.gd" id="5_ivps1"]
 [ext_resource type="Script" uid="uid://im5ncbv0gapj" path="res://state_machine/actor_states/actor_move.gd" id="6_urp6f"]
-[ext_resource type="PackedScene" uid="uid://bcs34ptkau5ax" path="res://Gun.tscn" id="10_8t03j"]
+[ext_resource type="PackedScene" uid="uid://bcs34ptkau5ax" path="res://Scenes/Gun.tscn" id="10_8t03j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqiix"]
 atlas = ExtResource("3_8t03j")

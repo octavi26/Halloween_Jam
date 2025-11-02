@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var bullet =  load("res://bullet.tscn")
+@export var bullet =  load("res://Scenes/bullet.tscn")
 @export var nrBullets = 5
 @export var spread: float = 1
 @onready var root = get_node("/root")
@@ -80,4 +80,10 @@ func _process(delta: float) -> void:
 		$Muzzle_West/Flash.visible = false
 		
 	if Input.is_action_just_pressed("shoot") and $Cooldown.is_stopped():
-		shoot(muzzlePosition, (get_global_mouse_position() - global_position).normalized())
+		if Player.bullets > 0:
+			Player.bullets -= 1
+			Ui.EliminateBullet()
+			shoot(muzzlePosition, (get_global_mouse_position() - global_position).normalized())
+		else:
+			Ui.timer.start()
+			

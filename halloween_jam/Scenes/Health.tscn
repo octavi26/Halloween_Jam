@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://yt6k8v3kru75"]
+
+[ext_resource type="Texture2D" uid="uid://cc18701r2js5y" path="res://Assets/full_heart.tres" id="1_3e1s5"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_3e1s5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_3e1s5")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_3e1s5")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_3e1s5")
+stretch_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_3e1s5")
+stretch_mode = 2
