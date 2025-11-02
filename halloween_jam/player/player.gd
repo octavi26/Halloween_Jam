@@ -10,11 +10,19 @@ class_name player extends CharacterBody2D
 @onready var move_controller: Node = $MoveController
 @onready var screen_size := get_viewport_rect().size
 @onready var bullets = 5
+@onready var maxHealth = 5
 @onready var health = 5
 
+var nextScene = 0
+
+func Hit(damage):
+	health -= damage
+	if health <= 0:
+		die()
 
 func _ready() -> void:
 	move_state_machine.init(self, sprite, move_controller)
+	$Camera2D/ColorRect.modulate.a = 0
 
 func _unhandled_input(event: InputEvent) -> void:
 	move_state_machine.process_input(event)
@@ -23,6 +31,11 @@ func _physics_process(delta: float) -> void:
 	move_state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
+	if nextScene and $SceneChange.is_stopped():
+		var ns = nextScene
+		nextScene = 0
+		get_tree().change_scene_to_file(ns)
+	
 	move_state_machine.process_frame(delta)
 	
 	var angle = (get_global_mouse_position() - global_position).angle()
@@ -49,4 +62,10 @@ func _process(delta: float) -> void:
 	#rotation = angle
 
 func die() -> void:
-	get_tree().call_deferred("reload_current_scene")
+	changeScene("res://Scenes/Death_Screen.tscn")
+
+func changeScene(scene):
+	var tween = create_tween()
+	tween.tween_property($Camera2D/ColorRect, "modulate:a", 1, 1)
+	nextScene = scene
+	$SceneChange.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bnnuhl4bejomt"]
+[gd_scene load_steps=62 format=3 uid="uid://bnnuhl4bejomt"]
 
 [ext_resource type="Script" uid="uid://bl6c5uu7n02c2" path="res://player/player.gd" id="1_dw050"]
 [ext_resource type="Texture2D" uid="uid://dy1e0st307t0a" path="res://Assets/player_west.png" id="2_hg6s5"]
@@ -390,12 +390,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fj7yv"]
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t03j"]
+size = Vector2(16, 4)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ieo8"]
+radius = 7.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 13
+<<<<<<< Updated upstream
 collision_mask = 7
+=======
+collision_layer = 2
+>>>>>>> Stashed changes
 script = ExtResource("1_dw050")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -404,8 +412,17 @@ sprite_frames = SubResource("SpriteFrames_p5tca")
 animation = &"idle_east"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_fj7yv")
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_8t03j")
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(0, -21)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionHit" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_2ieo8")
 
 [node name="MoveController" type="Node" parent="."]
 script = ExtResource("3_n7ghd")
@@ -432,5 +449,17 @@ drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1000
+offset_left = -332.0
+offset_top = -210.0
+offset_right = 368.0
+offset_bottom = 191.0
+color = Color(0, 0, 0, 1)
+
 [node name="Gun" parent="." instance=ExtResource("10_8t03j")]
 position = Vector2(-1, -7)
+
+[node name="SceneChange" type="Timer" parent="."]
+one_shot = true

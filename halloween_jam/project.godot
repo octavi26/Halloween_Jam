@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Halloween_Jam"
-run/main_scene="uid://blunqhxawrtbf"
+run/main_scene="uid://cl60r2lr02xig"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
