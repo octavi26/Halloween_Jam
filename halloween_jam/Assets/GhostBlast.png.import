@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgb5qn1sii5xx"
-path="res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"
+uid="uid://dn06jryxjtjfe"
+path="res://.godot/imported/GhostBlast.png-9d9ba1a53be5180b6cd3f4202f2aaff1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/character_roundRed.png"
-dest_files=["res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"]
+source_file="res://Assets/GhostBlast.png"
+dest_files=["res://.godot/imported/GhostBlast.png-9d9ba1a53be5180b6cd3f4202f2aaff1.ctex"]
 
 [params]
 

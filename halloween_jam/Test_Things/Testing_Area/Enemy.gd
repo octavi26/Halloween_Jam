@@ -24,9 +24,23 @@ func _ready() -> void:
 func Hit(damage):
 	health -= damage
 	if health <= 0:
-		queue_free()
+		$Sprite2D.play("death")
+		for child in get_children():
+			if child.name.begins_with("hand"):
+				child.queue_free()
+		#queue_free()
 
 func _physics_process(delta: float) -> void:
+	if !$Spawn.is_stopped():
+		return
+	else:
+		for child in get_children():
+			if child.name.begins_with("hand"):
+				child.visible = true
+				
+	if $Sprite2D.animation == "death" and $Sprite2D.frame == 5:
+		queue_free()
+		
 	var path_distance = nav_agent.distance_to_target()
 	line_of_sight.target_position = to_local(Player.global_position)
 	line_of_sight.force_raycast_update()
@@ -64,7 +78,10 @@ func _on_timer_timeout() -> void:
 	
 func Attack():
 	timerAttack.start()
-	#animatie cv
+	
+	for child in get_children():
+		if child.name.begins_with("hand"):
+			child.shoot()
 
 func _on_timer_2_timeout() -> void:
 	var path_distance = nav_agent.distance_to_target()

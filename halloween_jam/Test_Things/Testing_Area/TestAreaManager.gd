@@ -2,12 +2,12 @@ extends Node2D
 
 var waves = [
 	{
-		"type1" : 2,
-		"type2" : 2
+		"type1" : 3,
+		"type2" : 0
 	},
 	{
-		"type2" : 3,
-		"type1" : 1
+		"type1" : 2,
+		"type2" : 0
 	}
 ]
 var currentWave = 0
@@ -24,7 +24,7 @@ func StartWave(wave):
 
 func _on_enemy_died():
 	enemiesAlive -= 1
-	if !enemiesAlive:
+	if enemiesAlive == 0:
 		if currentWave == waves.size():
 			Global.TestAreaFinished = true
 			Global.TestAreaDoors = true

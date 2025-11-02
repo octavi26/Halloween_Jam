@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4srmaopuu1r8"]
+
+[ext_resource type="Script" uid="uid://0d14rdhj48js" path="res://Scripts/hand.gd" id="1_e75s6"]
+[ext_resource type="Texture2D" uid="uid://br14x6fbcbesd" path="res://Assets/Ghost1_hand.png" id="2_wymn8"]
+[ext_resource type="Texture2D" uid="uid://dn06jryxjtjfe" path="res://Assets/GhostBlast.png" id="3_3q536"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wjrw"]
+atlas = ExtResource("2_wymn8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo6nf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wjrw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgjit"]
+atlas = ExtResource("3_3q536")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwava"]
+atlas = ExtResource("3_3q536")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i0sp"]
+atlas = ExtResource("3_3q536")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djtxf"]
+atlas = ExtResource("3_3q536")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ou47"]
+atlas = ExtResource("3_3q536")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hn0d5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgjit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwava")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i0sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djtxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ou47")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="hand" type="Node2D"]
+script = ExtResource("1_e75s6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fo6nf")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(0, 7)
+rotation = 1.5707964
+
+[node name="Flash" type="AnimatedSprite2D" parent="Muzzle"]
+position = Vector2(-1, 4.371139e-08)
+sprite_frames = SubResource("SpriteFrames_hn0d5")
+frame = 4
+frame_progress = 1.0

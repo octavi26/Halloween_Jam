@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgb5qn1sii5xx"
-path="res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"
+uid="uid://br14x6fbcbesd"
+path="res://.godot/imported/Ghost1_hand.png-2547e673f63ea3161a7ade94b55ffcd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/character_roundRed.png"
-dest_files=["res://.godot/imported/character_roundRed.png-aba6c7e65912bc2f3450407c2f1392d0.ctex"]
+source_file="res://Assets/Ghost1_hand.png"
+dest_files=["res://.godot/imported/Ghost1_hand.png-2547e673f63ea3161a7ade94b55ffcd7.ctex"]
 
 [params]
 

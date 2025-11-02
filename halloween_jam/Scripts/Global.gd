@@ -4,8 +4,8 @@ extends Node
 @onready var enemy2 = preload("res://Test_Things/Testing_Area/Enemy2.tscn")
 
 #speed, health, damage, attackRange, attackDelay
-var enemiesTypes = {"type1" : [300, 100, 10, 200, 1],
-				"type2" : [350, 150, 5, 300, 1]
+var enemiesTypes = {"type1" : [70, 10, 10, 200, 1],
+				"type2" : [150, 150, 5, 300, 1]
 				}
 
 var TestAreaFinished = false
