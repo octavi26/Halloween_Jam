@@ -127,8 +127,5 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_hn0d5")
 frame = 4
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
-
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true

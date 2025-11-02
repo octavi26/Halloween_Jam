@@ -1,7 +1,7 @@
 class_name player extends CharacterBody2D
 
-@export var max_move_speed := 300.0 # Velocity in pixels/sec
-@export var max_sprint_speed := 500.0 # Velocity in pixels/sec
+@export var max_move_speed := 150.0 # Velocity in pixels/sec
+@export var max_sprint_speed := 150.0 # Velocity in pixels/sec
 @export var move_acceleration := 1500.0 # Acceleration in pixels/sec/sec
 @export var move_deceleration := 2000.0 # Acceleration in pixels/sec/sec
 

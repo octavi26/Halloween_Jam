@@ -395,7 +395,6 @@ height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 13
-collision_layer = 2
 script = ExtResource("1_dw050")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
