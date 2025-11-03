@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://rg38kpyj5w46"]
+
+[ext_resource type="Script" uid="uid://d05pxcyqga5am" path="res://Scripts/Credits2.gd" id="1_wo5um"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhh6f"]
+font_size = 28
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wo5um")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -628.0
+offset_top = -387.0
+offset_right = 649.0
+offset_bottom = 374.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -575.0
+offset_top = -320.0
+offset_right = 567.0
+offset_bottom = 364.0
+text = "Credits:
+Sounds (c) by Michel Baradari apollo-music.de
+Licensed under CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
+Hosted on opengameart.org
+Slime Monster by Iwan 'qubodup' Gabovitch http://opengameart.org/users/qubodup
+Weapon Sounds by Q009 
+https://opengameart.org/content/q009s-weapon-sounds
+Magic Missiles by spookymodem
+https://opengameart.org/content/magic-missiles
+Dark Ambience Loop by Iwan Gabovitch qubodup.net
+
+
+
+
+Press SPACE to continue"
+label_settings = SubResource("LabelSettings_xhh6f")
+horizontal_alignment = 1

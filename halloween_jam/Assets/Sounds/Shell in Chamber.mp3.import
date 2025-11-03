@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c63etcohgh3y6"
+path="res://.godot/imported/Shell in Chamber.mp3-2f1fd485e148a527bbce11c56b3effdd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Shell in Chamber.mp3"
+dest_files=["res://.godot/imported/Shell in Chamber.mp3-2f1fd485e148a527bbce11c56b3effdd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 Player="*res://player/player.tscn"
 Ui="*res://Scenes/UI.tscn"
+Music="*res://Scenes/Music.tscn"
 
 [input]
 

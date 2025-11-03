@@ -10,6 +10,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func shoot():
+	$Sound.play(0.45)
+	$Timer.wait_time = 1.27 - 0.45
 	var muzzlePosition = $Muzzle.global_position
 	var direction = (Player.global_position - global_position).normalized()
 	$Muzzle/Flash.play()
@@ -29,3 +31,7 @@ func _process(delta: float) -> void:
 	if angle < 0:
 		angle += 2 * PI
 	rotation = angle - PI / 2
+
+
+func _on_timer_timeout() -> void:
+	$Sound.stop()

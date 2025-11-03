@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://detwugmh7s3a5"]
+[gd_scene load_steps=30 format=3 uid="uid://detwugmh7s3a5"]
 
 [ext_resource type="Script" uid="uid://w7r1sofajft7" path="res://Scripts/Enemy.gd" id="1_xeo28"]
 [ext_resource type="Texture2D" uid="uid://dc705a8pa5p2t" path="res://Assets/Ghost1.png" id="2_kpr8r"]
 [ext_resource type="PackedScene" uid="uid://b4srmaopuu1r8" path="res://Scenes/hand.tscn" id="3_1exfc"]
+[ext_resource type="AudioStream" uid="uid://0h52kid7ob6" path="res://Assets/Sounds/ghost.wav" id="4_kpr8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1vq8"]
 atlas = ExtResource("2_kpr8r")
@@ -171,8 +172,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gett"]
-size = Vector2(20, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpr8r"]
+radius = 19.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_us3a4"]
 radius = 9.0
@@ -180,6 +181,7 @@ height = 36.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_xeo28")
@@ -193,8 +195,8 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionWalls" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_6gett")
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_kpr8r")
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(0, -21)
@@ -209,14 +211,16 @@ shape = SubResource("CapsuleShape2D_us3a4")
 avoidance_enabled = true
 avoidance_layers = 16
 avoidance_mask = 16
+debug_enabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -14)
 enabled = false
 target_position = Vector2(0, 0)
 collision_mask = 4
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
@@ -235,6 +239,11 @@ spread = 0.0
 visible = false
 position = Vector2(-9, -20)
 spread = 0.0
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kpr8r")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

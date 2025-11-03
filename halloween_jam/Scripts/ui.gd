@@ -18,6 +18,7 @@ func EliminateHeart():
 		chosenHeart.modulate.a = 0.2
 	
 func ReloadHearts():
+	Player.health = Player.maxHealth
 	for heart in hearts:
 		heart.modulate.a = 1.0
 

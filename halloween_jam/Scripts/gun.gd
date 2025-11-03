@@ -79,12 +79,14 @@ func _process(delta: float) -> void:
 		$Muzzle_North/Flash.visible = true
 		$Muzzle_West/Flash.visible = false
 		
-	if Input.is_action_just_pressed("shoot") and $Cooldown.is_stopped():
+	if Input.is_action_just_pressed("shoot") and $Cooldown.is_stopped() and Player.is_physics_processing():
 		if Player.bullets > 0:
+			$Bullet.play()
 			Player.bullets -= 1
 			Ui.EliminateBullet()
 			shoot(muzzlePosition, (get_global_mouse_position() - global_position).normalized())
 		else:
 			if Ui.timer.is_stopped():
 				Ui.timer.start()
+				$Reload.play()
 			

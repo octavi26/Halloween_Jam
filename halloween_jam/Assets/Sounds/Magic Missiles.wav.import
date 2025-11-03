@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3srvmx6v5he4"
+path="res://.godot/imported/Magic Missiles.wav-1071ed21acb2b8f6f2d263c14e1ea102.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Magic Missiles.wav"
+dest_files=["res://.godot/imported/Magic Missiles.wav-1071ed21acb2b8f6f2d263c14e1ea102.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

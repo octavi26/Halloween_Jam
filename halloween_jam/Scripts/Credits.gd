@@ -11,6 +11,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		Global.Level0Finished = false
+		Global.Level1Finished = false
+		Global.Level2Finished = false
+		Global.Level3Finished = false
+		Global.currentLevel = 0
 		Player.visible = true
 		Ui.visible = true
 		for child in Player.get_children():
@@ -18,4 +23,4 @@ func _process(delta: float) -> void:
 				child.make_current()
 				child.get_child(0).modulate.a = 0
 		
-		get_tree().change_scene_to_file("res://LevelScenes/Level0.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Credits2.tscn")

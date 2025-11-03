@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gydb"]
 radius = 4.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=["ghost-bullets"]]
 scale = Vector2(1.5, 1.5)
 collision_layer = 0
 collision_mask = 5

@@ -8,5 +8,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	Player.changeScene(Global.levels[Global.currentLevel])
-	pass
+	if Global.currentLevel < Global.levels.size():
+		Player.changeScene(Global.levels[Global.currentLevel])
+	else:
+		Player.changeScene("res://Scenes/Credits.tscn")

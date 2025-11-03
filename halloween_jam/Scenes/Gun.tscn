@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcs34ptkau5ax"]
+[gd_scene load_steps=17 format=3 uid="uid://bcs34ptkau5ax"]
 
 [ext_resource type="Script" uid="uid://vvdtypo8djm7" path="res://Scripts/gun.gd" id="1_fry05"]
 [ext_resource type="Texture2D" uid="uid://bp5w6jdlty4d8" path="res://Assets/shotgun.png" id="2_7c1qe"]
 [ext_resource type="Texture2D" uid="uid://2bekahifaw6c" path="res://Assets/GuntBlast.png" id="3_7c1qe"]
+[ext_resource type="AudioStream" uid="uid://cdiidtrx3k7sq" path="res://Assets/Sounds/shotgun.wav" id="4_37v6b"]
+[ext_resource type="AudioStream" uid="uid://c63etcohgh3y6" path="res://Assets/Sounds/Shell in Chamber.mp3" id="5_phyfd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fry05"]
 atlas = ExtResource("2_7c1qe")
@@ -129,3 +131,13 @@ frame = 4
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="Bullet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_37v6b")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="Reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_phyfd")
+volume_db = -20.0
+bus = &"SFX"

@@ -1,5 +1,12 @@
 class_name player extends CharacterBody2D
 
+var step_sounds = [
+	preload("res://Assets/Sounds/step1.ogg"),
+	preload("res://Assets/Sounds/step2.ogg"),
+	preload("res://Assets/Sounds/step3.ogg"),
+	preload("res://Assets/Sounds/step4.ogg")
+]
+
 @export var max_move_speed := 150.0 # Velocity in pixels/sec
 @export var max_sprint_speed := 150.0 # Velocity in pixels/sec
 @export var move_acceleration := 1500.0 # Acceleration in pixels/sec/sec
@@ -12,6 +19,7 @@ class_name player extends CharacterBody2D
 @onready var bullets = 5
 @onready var maxHealth = 5
 @onready var health = 5
+@onready var hitbox = $HitBox
 
 var died = 0
 var nextScene = 0
@@ -19,9 +27,13 @@ var nextScene = 0
 func Hit(damage):
 	if health > 0:
 		health -= damage
-		print("am fot lovit")
+		$AnimatedSprite2D.modulate = Color(1, 0, 0)
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D, "modulate", Color(1, 1, 1), 0.2)
 		Ui.EliminateHeart()
 	if health <= 0 and !died:
+		hitbox.monitorable = false
+		Player.visible = false
 		died = 1
 		die()
 
@@ -58,7 +70,8 @@ func _process(delta: float) -> void:
 	if angle >= 5 * PI / 4 and angle <= 7 * PI / 4:
 		direction = "north"
 		
-	if velocity:
+	if velocity and is_physics_processing():
+		PlayStep()
 		action = "walk"
 	else:
 		action = "idle"
@@ -66,7 +79,19 @@ func _process(delta: float) -> void:
 	$AnimatedSprite2D.play(action + "_" + direction)
 	#rotation = angle
 
+func PlayStep():
+	if $Steps.playing:
+		return
+	var random_step = step_sounds[randi() % step_sounds.size()]
+	$Steps.stream = random_step
+	if $Timer.time_left <= 0:
+		$Steps.pitch_scale = randf_range(0.8, 1.2)
+		$Steps.play()
+		$Timer.start(0.4)
+
 func die() -> void:
+	set_physics_process(false)
+	get_tree().call_group("ghost-bullets", "queue_free")
 	changeScene("res://Scenes/Death_Screen.tscn")
 
 func changeScene(scene):

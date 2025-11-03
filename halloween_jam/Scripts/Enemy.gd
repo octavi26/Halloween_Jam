@@ -19,11 +19,16 @@ func Initialize(stats):
 	attackDelay = stats[4]
 
 func _ready() -> void:
+	$Death.play()
 	timerAttack.wait_time = attackDelay
 
 func Hit(damage):
 	health -= damage
+	sprite.modulate = Color(1, 0, 0)
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1), 0.2)
 	if health <= 0:
+		$Death.play(0.6)
 		$Sprite2D.play("death")
 		for child in get_children():
 			if child.name.begins_with("hand"):

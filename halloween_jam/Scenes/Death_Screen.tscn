@@ -31,17 +31,20 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 6.86328
-offset_top = 16.3427
-offset_right = 336.863
-offset_bottom = 104.343
+offset_left = 6.75284
+offset_top = 16.2137
+offset_right = 337.753
+offset_bottom = 104.214
 scale = Vector2(0.0828404, 0.0816308)
 text = "You Died :("
 label_settings = SubResource("LabelSettings_e0yel")
 
 [node name="Teleport" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(20.1557, 19.0588)
+
+[connection signal="timeout" from="Teleport" to="." method="_on_teleport_timeout"]

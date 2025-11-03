@@ -16,6 +16,7 @@ var currentWave = 0
 var enemiesAlive = 0
 
 func _ready() -> void:
+	Player.global_position = door.global_position
 	if !Global.Level0Finished:
 		StartWave(currentWave)
 

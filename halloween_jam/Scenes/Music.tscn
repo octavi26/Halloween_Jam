@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4aqsbx0six31"]
+
+[ext_resource type="AudioStream" uid="uid://bhwhf4y1a837w" path="res://Assets/Music/Iwan Gabovitch - Dark Ambience Loop.mp3" id="1_fghhr"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_fghhr")
+autoplay = true
+bus = &"Music"

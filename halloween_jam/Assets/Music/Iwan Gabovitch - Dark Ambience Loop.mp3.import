@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhwhf4y1a837w"
+path="res://.godot/imported/Iwan Gabovitch - Dark Ambience Loop.mp3-a840ecf1796857b4f661dd097da32752.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Iwan Gabovitch - Dark Ambience Loop.mp3"
+dest_files=["res://.godot/imported/Iwan Gabovitch - Dark Ambience Loop.mp3-a840ecf1796857b4f661dd097da32752.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

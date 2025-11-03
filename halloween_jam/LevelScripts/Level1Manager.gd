@@ -16,6 +16,11 @@ var currentWave = 0
 var enemiesAlive = 0
 
 func _ready() -> void:
+	Player.global_position = door.global_position
+	for child in Player.get_children():
+			if child.name == "Camera2D":
+				child.make_current()
+				child.get_child(0).modulate.a = 0
 	if !Global.Level1Finished:
 		StartWave(currentWave)
 
