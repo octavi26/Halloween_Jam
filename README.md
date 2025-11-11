@@ -1,8 +1,8 @@
 # Ghosthunter
 
-<div align = "center>
+<p align = "center>
 <img width="315" height="250" alt="GhostHunter" src="https://github.com/user-attachments/assets/99e843b5-fd7e-4248-b97b-f15068e57ad8" />
-</div>
+</p>
 
 
 Made for **GoedWare Game Jam Halloween Part 2** *(in only 2 days)*  
