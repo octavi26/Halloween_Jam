@@ -11,10 +11,10 @@ script = ExtResource("1_wo5um")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -628.0
-offset_top = -387.0
-offset_right = 649.0
-offset_bottom = 374.0
+offset_left = -1056.0
+offset_top = -600.0
+offset_right = 1085.0
+offset_bottom = 635.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]

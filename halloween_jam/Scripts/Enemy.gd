@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var line_of_sight = $RayCast2D
 @onready var sprite = $Sprite2D
 @onready var timerAttack = $Timer2
+@onready var timerMove = $Timer
 
 func Initialize(stats):
 	speed = stats[0]
@@ -56,6 +57,11 @@ func _physics_process(delta: float) -> void:
 		var dir = global_position.direction_to(next_point)
 		var desired_velocity = dir * speed
 		velocity = velocity.lerp(desired_velocity, delta * 10)
+		if $Sprite2D.sprite_frames.has_animation("walk"):
+			$Sprite2D.play("walk")
+		#sa fac un elif in care doar verific daca viziunea enemy-ului se loveste de perete
+		#si daca da sa fac un timer in care sa nu isi actualizeze pozitia mereu ci doar 
+		#la cateva secunde pt a impiedica vibratia aia
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, delta * 10)
 		if timerAttack.is_stopped():

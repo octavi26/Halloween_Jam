@@ -1,2 +1,29 @@
-# Halloween_Jam
-game to enter a halloween GameJam
+# Ghosthunter
+
+<p align="center">
+<img width="315" height="250" alt="GhostHunter" src="https://github.com/user-attachments/assets/99e843b5-fd7e-4248-b97b-f15068e57ad8" />
+</p>
+
+Made for **GoedWare Game Jam Halloween Part 2** *(in only 2 days)*  
+🏆 Placed **18th**
+
+🎮 Play on itch.io: [Ghosthunter](https://cosminqf.itch.io/ghosthunter)
+
+## About
+**Catch them all.**  
+This house is haunted, and you were never supposed to be here.  
+But the job must be done.  
+
+Ghosts will fight back — can you survive and escape without being killed?  
+
+Your **shotgun** is your best friend.  
+Use it wisely.
+
+
+## Credits
+- Danciu Cosmin Alexandru  
+- Radu Dimitrie Octavian  
+
+
+## Info
+Built with **Godot Engine**.  

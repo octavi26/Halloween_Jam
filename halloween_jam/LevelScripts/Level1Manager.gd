@@ -8,6 +8,10 @@ var waves = [
 		"type2" : 0
 	},
 	{
+		"type1" : 4,
+		"type2" : 0
+	},
+	{
 		"type1" : 2,
 		"type2" : 0
 	}

@@ -2,9 +2,10 @@ extends Node2D
 
 func _ready() -> void:
 	Player.visible = false
+	Player.set_physics_process(false)
 	$Camera2D.make_current()
 	Player.health = Player.maxHealth
-	Player.global_position = Vector2(-5, -11)
+	#Player.global_position = Vector2(-5, -11)
 	Ui.visible = false
 
 
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		Player.visible = true
 		Ui.visible = true
+		Player.set_physics_process(true)
 		for child in Player.get_children():
 			if child.name == "Camera2D":
 				child.make_current()

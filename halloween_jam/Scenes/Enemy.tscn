@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://detwugmh7s3a5"]
+[gd_scene load_steps=30 format=3 uid="uid://b08xgchfvi4sd"]
 
 [ext_resource type="Script" uid="uid://w7r1sofajft7" path="res://Scripts/Enemy.gd" id="1_xeo28"]
 [ext_resource type="Texture2D" uid="uid://dc705a8pa5p2t" path="res://Assets/Ghost1.png" id="2_kpr8r"]
@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kpr8r"]
-radius = 19.0
+radius = 15.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_us3a4"]
 radius = 9.0
@@ -209,9 +209,9 @@ shape = SubResource("CapsuleShape2D_us3a4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
+radius = 20.0
 avoidance_layers = 16
 avoidance_mask = 16
-debug_enabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -14)

@@ -1,11 +1,13 @@
 extends Node
 
 @onready var enemy1 = preload("res://Scenes/Enemy.tscn")
-@onready var enemy2 = preload("res://Scenes/Enemy2.tscn")
+@onready var enemy2 = preload("res://Scenes/Enemy1.tscn")
+@onready var enemy3 = preload("res://Scenes/Enemy2.tscn")
 
 #speed, health, damage, attackRange, attackDelay
 var enemiesTypes = {"type1" : [70, 10, 10, 200, 1],
-				"type2" : [150, 150, 5, 300, 1]
+				"type2" : [50, 20, 10, 100, 1.5],
+				"type3" : [70, 15, 10, 200, 1]
 				}
 var levels = [
 	"res://LevelScenes/Level0.tscn",
@@ -32,8 +34,8 @@ func SpawnEnemies(wave, level):
 			
 			if enemy == "type1":
 				enemy_instance = enemy1.instantiate()
-			elif enemy == "type2":
-				enemy_instance = enemy2.instantiate()
+			elif enemy == "type3":
+				enemy_instance = enemy3.instantiate()
 			else:
 				#alte tipuri
 				pass

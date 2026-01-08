@@ -449,10 +449,10 @@ drag_bottom_margin = 0.1
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 modulate = Color(1, 1, 1, 0)
 z_index = 1000
-offset_left = -332.0
-offset_top = -210.0
-offset_right = 368.0
-offset_bottom = 191.0
+offset_left = -517.0
+offset_top = -358.0
+offset_right = 533.0
+offset_bottom = 331.0
 color = Color(0, 0, 0, 1)
 
 [node name="Gun" parent="." instance=ExtResource("10_8t03j")]

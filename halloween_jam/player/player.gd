@@ -21,6 +21,7 @@ var step_sounds = [
 @onready var health = 5
 @onready var hitbox = $HitBox
 
+var cntDeaths = 0
 var died = 0
 var nextScene = 0
 
@@ -32,6 +33,7 @@ func Hit(damage):
 		tween.tween_property($AnimatedSprite2D, "modulate", Color(1, 1, 1), 0.2)
 		Ui.EliminateHeart()
 	if health <= 0 and !died:
+		cntDeaths += 1
 		hitbox.monitorable = false
 		Player.visible = false
 		died = 1
@@ -52,6 +54,8 @@ func _process(delta: float) -> void:
 		var ns = nextScene
 		nextScene = 0
 		get_tree().change_scene_to_file(ns)
+		Ui.visible = true
+		#Player.set_physics_process(true)
 	
 	move_state_machine.process_frame(delta)
 	
@@ -98,4 +102,6 @@ func changeScene(scene):
 	var tween = create_tween()
 	tween.tween_property($Camera2D/ColorRect, "modulate:a", 1, 1)
 	nextScene = scene
+	Ui.visible = false
+	#Player.set_physics_process(false)
 	$SceneChange.start()

@@ -2,8 +2,8 @@ extends Node2D
 
 var waves = [
 	{
-		"type1" : 3,
-		"type2" : 0
+		"type1" : 0,
+		"type3" : 1
 	},
 	{
 		"type1" : 2,

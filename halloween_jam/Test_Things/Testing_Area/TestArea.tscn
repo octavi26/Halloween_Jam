@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo3bnncm2ic0f"]
+[gd_scene load_steps=7 format=3 uid="uid://bo3bnncm2ic0f"]
 
 [ext_resource type="Script" uid="uid://drl2j1o2fil5b" path="res://Test_Things/Testing_Area/TestAreaManager.gd" id="1_nn8mg"]
 [ext_resource type="Texture2D" uid="uid://b4wy8iaaii5b1" path="res://Test_Things/InteriorTilesLITE.png" id="1_yywsa"]
-[ext_resource type="PackedScene" uid="uid://5qtchk766f2r" path="res://Scenes/Enemy2.tscn" id="2_shsrb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_shsrb"]
 vertices = PackedVector2Array(-135, 281, 551, 295, -551, 295, -201, 281, 537, -103, 537, -233, 551, -295, 377, -71, 471, -103, 457, -25, 391, -25, -407, 233, -201, 151, 409, 249, 343, 249, -473, 233, 457, 105, 217, 201, 151, 201, 409, 119, 391, 105, 343, 119, 217, 71, 377, -137, 471, -233, -263, 89, -407, 103, -329, 89, 217, -295, 279, -137, 217, -247, 103, -217, -87, -153, -135, -167, -135, -233, -89, -231, -455, -23, -455, -153, -345, -151, -329, -41, -231, 25, -231, -41, -153, -23, -73, 7, -73, 73, -135, 151, 119, -87, 119, -7, -87, -23, 103, -87, -153, -153, -167, -167, -167, -151, 153, -231, 153, -247, 185, -217, 279, -7, 185, -7, -89, -295, -551, -295, -249, -233, -249, -217, -345, -217, 345, -7, 345, -71, 169, 71, 169, 7, -263, 25, 7, 73, 7, 201, 73, 201, 73, 73, 151, 73, -473, 103, -521, -23, -521, -153)
@@ -653,9 +652,6 @@ sources/0 = SubResource("TileSetAtlasSource_0gh4r")
 
 [node name="TestArea" type="Node2D"]
 script = ExtResource("1_nn8mg")
-
-[node name="Enemy" parent="." instance=ExtResource("2_shsrb")]
-position = Vector2(267, 65)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_shsrb")

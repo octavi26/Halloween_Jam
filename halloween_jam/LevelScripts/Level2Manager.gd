@@ -4,12 +4,16 @@ extends Node2D
 
 var waves = [
 	{
-		"type1" : 3,
+		"type1" : 5,
+		"type2" : 0
+	},
+	{
+		"type1" : 5,
 		"type2" : 0
 	},
 	{
 		"type1" : 2,
-		"type2" : 0
+		"type3" : 1
 	}
 ]
 var currentWave = 0

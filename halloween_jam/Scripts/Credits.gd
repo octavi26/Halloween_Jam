@@ -2,10 +2,31 @@ extends Node2D
 
 func _ready() -> void:
 	Player.visible = false
+	Player.set_physics_process(false)
 	$Camera2D.make_current()
 	Player.health = Player.maxHealth
 	Player.global_position = Vector2(-5, -11)
 	Ui.visible = false
+	
+	var win_text = """
+[center][font_size=36][color=yellow][b]Total Deaths:[/b][/color] [color=red]%s[/color][/font_size][/center]
+
+[font_size=25]
+The game was created in only 2 days by only 2 people, so please excuse the eventual bugs.
+You WON!
+
+[font_size=25]
+[b]Developers:[/b]
+Danciu Cosmin - Programming & Level Design & Sound
+Radu Octavian - Programming & Art
+
+Press [color=orange]SPACE[/color] to continue
+[/font_size]
+"""
+
+	$Label.text = win_text % Player.cntDeaths
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
